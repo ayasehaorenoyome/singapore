@@ -19,11 +19,19 @@ let $submitTaeget;
 const scrollBar = () => {
 	$(window).load(function(){
 		$(".scrollBox01").mCustomScrollbar({
+			setTop:'-9999999px',
 			autoHideScrollbar: true,
 			advanced:{
 				updateOnContentResize: true
 			}
 		});
+		if ($(ele).data('method') == 'panel_workroom') {
+			//上のsettopで底までいかなかった場合一瞬settopの位置を表示した後、底まで行く
+			$('.mCustomScrollbar').mCustomScrollbar('scrollTo', 'bottom',{
+				scrollInertia:0
+			}
+		);
+        }
 	});
 }
 
@@ -38,7 +46,6 @@ const headerClock = () => {
 }
 
 const submitMessage = () => {
-	
 	$('#text').on('keydown',function (e) {
 		var $submit = $('#text').val();
 		if ( e.which === 13 || e.which === 8) {
@@ -130,6 +137,8 @@ const submitMessage = () => {
 	
 }
 
+
+
 const inputFocus = () => {
 	$('.col.input').css('transition','0.3s');
 	$('#text').on('focus', function(){
@@ -154,6 +163,7 @@ class initSet {
 	DOMReadAfter(op) {
 		// simpleModalSet();
 		scrollBar();
+		
 		headerClock();
 		submitMessage();
 		inputFocus();

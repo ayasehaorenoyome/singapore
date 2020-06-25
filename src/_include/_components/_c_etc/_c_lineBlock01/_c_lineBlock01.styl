@@ -1,5 +1,5 @@
 .c-lineBlock
-	width 411px
+	width 48vh
 	height 100vh
 	position relative
 	margin 0 auto
@@ -35,8 +35,8 @@
 			left 0
 			margin auto
 			transform translate3d(0,-2px,0)
-			width 364px
-			height 643px
+			width 88%
+			height 75%
 			+MQ_SP(400px)
 				position static
 				width 100%
@@ -271,10 +271,12 @@
 			background-color #fff
 			.col
 				position relative
-
+				margin-left 5px
+				&:first-child
+					margin-left 0
 				&.plus
-					width 22px
-					height 22px
+					width 20px
+					height 20px
 					&:before,&:after
 						content ''
 						display inline-block
@@ -293,7 +295,7 @@
 						height 100%
 				&.camera
 					width 24px
-					height 20px
+					height 24px
 					&:before
 						fontIconSet("\EA11")
 						display inline-block
@@ -301,7 +303,7 @@
 						fontSize(24)
 				&.graphic
 					width 24px
-					height 20px
+					height 24px
 					&:before
 						fontIconSet("\EA12")
 						display inline-block
@@ -321,7 +323,7 @@
 						right 6px
 						transform translate3d(0,-50%,0)
 						color #222a41
-						fontSize(26)
+						fontSize(24)
 					textarea
 						width calc(100% + 20px)
 						height 100%
@@ -350,16 +352,16 @@
 						
 
 				&.mike
-					width 26px
-					height 26px
+					width 24px
+					height 24px
 					&:before
 						fontIconSet("\EA14")
 						display inline-block
 						color #222a41
-						fontSize(26)
+						fontSize(24)
 				&.submit
-					width 26px
-					height 26px
+					width 24px
+					height 24px
 					cursor pointer
 					&:before
 						fontIconSet("\EA15")

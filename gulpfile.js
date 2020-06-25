@@ -184,6 +184,6 @@ gulp.task('watch', function () {
 	gulp.watch(url.src + url.fonts + url.icons + '*.svg', ['iconfont']);
 });
 
-gulp.task('build', ['webpack', 'jsVendor', 'pug', 'stylus', 'imagemin','svgmin']);
+gulp.task('build', ['webpack', 'jsVendor', 'pug', 'stylus', 'imagemin', 'iconfont','svgmin']);
 gulp.task('default', ['browser-sync', 'watch']);
 
