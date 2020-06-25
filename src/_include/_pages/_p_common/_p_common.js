@@ -124,6 +124,7 @@ const submitMessage = () => {
 							},2000 + $count);
 
 						}
+
 					}
 					$('.col.mike').show();
 					$('.col.submit').remove(); 
