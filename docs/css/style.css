@@ -31239,6 +31239,7 @@ button.swiper-pagination-bullet {
   list-style: decimal;
 }
 .c-lineBlock {
+  max-width: 370px;
   width: 48vh;
   height: 100vh;
   position: relative;
@@ -31281,7 +31282,9 @@ button.swiper-pagination-bullet {
   margin: auto;
   transform: translate3d(0, -2px, 0);
   width: 88%;
+  max-width: 350px;
   height: 75%;
+  max-height: 580px;
 }
 @media screen and (max-width: 400px) {
   .c-lineBlock .block.contents {

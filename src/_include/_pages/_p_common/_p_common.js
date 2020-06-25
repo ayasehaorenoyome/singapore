@@ -18,13 +18,7 @@ let $submitTaeget;
 
 const scrollBar = () => {
 	$(window).load(function(){
-		$(".scrollBox01").mCustomScrollbar({
-			setTop:'-9999999px',
-			autoHideScrollbar: true,
-			advanced:{
-				updateOnContentResize: true
-			}
-		});
+		$(".scrollBox01").mCustomScrollbar();
 		if ($(ele).data('method') == 'panel_workroom') {
 			//上のsettopで底までいかなかった場合一瞬settopの位置を表示した後、底まで行く
 			$('.mCustomScrollbar').mCustomScrollbar('scrollTo', 'bottom',{
@@ -68,10 +62,14 @@ const submitMessage = () => {
 							});
 						},2000);
 					}
+					function scrollBottm() {
+						$(".scrollBox01").mCustomScrollbar("scrollTo","bottom");
+					}
 					
 					if ($submit !== '') {
 						$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">'+ $h + ':' + $m + '</span></span><span class="text">' + $submit + '</span></p>');
 						$('#text').val('');
+						scrollBottm();
 						if ($submit.match('どこ|同級会') ) {
 							var $text01 = 'いま、シンガポールにいます。'
 							var $count01 = $text01.length * 300;
@@ -80,9 +78,11 @@ const submitMessage = () => {
 							readMessage();
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							},2000 + $count01);
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text02 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							},2000 + $count01 + $count02 );
 						} else if ($submit.match('正解は') ) {
 							var $text01 = '越後製菓'
@@ -91,9 +91,11 @@ const submitMessage = () => {
 							readMessage();
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							},2000 + $count01);
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $img01 +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							},2000 + $count01 + 1000);
 						} else if ($submit.match('おじさん|オジサン') ) {
 							var $ojisan = [
@@ -118,6 +120,7 @@ const submitMessage = () => {
 							readMessage();
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $randTxt +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							},2000 + $count);
 
 						}

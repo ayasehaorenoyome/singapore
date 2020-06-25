@@ -7948,13 +7948,7 @@ var $submitTaeget = void 0;
 
 var scrollBar = function scrollBar() {
 	$(window).load(function () {
-		$(".scrollBox01").mCustomScrollbar({
-			setTop: '-9999999px',
-			autoHideScrollbar: true,
-			advanced: {
-				updateOnContentResize: true
-			}
-		});
+		$(".scrollBox01").mCustomScrollbar();
 		if ($(ele).data('method') == 'panel_workroom') {
 			//上のsettopで底までいかなかった場合一瞬settopの位置を表示した後、底まで行く
 			$('.mCustomScrollbar').mCustomScrollbar('scrollTo', 'bottom', {
@@ -7997,10 +7991,14 @@ var submitMessage = function submitMessage() {
 							});
 						}, 2000);
 					}
+					function scrollBottm() {
+						$(".scrollBox01").mCustomScrollbar("scrollTo", "bottom");
+					}
 
 					if ($submit !== '') {
 						$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="text">' + $submit + '</span></p>');
 						$('#text').val('');
+						scrollBottm();
 						if ($submit.match('どこ|同級会')) {
 							var $text01 = 'いま、シンガポールにいます。';
 							var $count01 = $text01.length * 300;
@@ -8009,9 +8007,11 @@ var submitMessage = function submitMessage() {
 							readMessage();
 							setTimeout(function () {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							}, 2000 + $count01);
 							setTimeout(function () {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text02 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							}, 2000 + $count01 + $count02);
 						} else if ($submit.match('正解は')) {
 							var $text01 = '越後製菓';
@@ -8020,9 +8020,11 @@ var submitMessage = function submitMessage() {
 							readMessage();
 							setTimeout(function () {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							}, 2000 + $count01);
 							setTimeout(function () {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							}, 2000 + $count01 + 1000);
 						} else if ($submit.match('おじさん|オジサン')) {
 							var $ojisan = ['コンバンハ✋😅<br>もう、寝ちゃったかな⁉️<br>おじさんは、これから❗️布団に入ります。(^_^)<br>今日は、仕事が忙しかったから、クタクタだよ😱', '久しぶり😃☀ (^_^)😃✋😆<br>そういえば、昨日は例の中華🍜に行ってきたよ。<br>結構いい雰囲気だったから、オススメだヨ😚', '会社をサボるなんて、悪い子だなぁ😍😆❗ﾅﾝﾁｬｯﾃ😃✋<br>早く会いたいな😃☀ 😘', '髪の毛、切ったのかな😜⁉️🤔<br>似合いすぎだヨ(^_^)😚<br>可愛すぎて小生お仕事に集中できなくなっちゃいそうだよ💔(・_・;どうしてくれるンダ😃♥', '早く会いたいナ💗', '愛しいなぁもウ😃☀ <br>おじさん、本当にお姫様かと思っちゃったよ😄😃☀ 😘(^з<)❗😃', '久しぶり😃☀ (^o^)😃❗<br>今日も素敵な1日に、なりますよウニ😃✋(^o^)❗', 'そっちも晴れなのかな❓<br>本日のランチ🍴は奮発してピッツァ🍕付き(^з<)😍💗(^o^)😄<br>誰だメタボなんて言ったやつハ💔(◎ ＿◎;)💦(T_T)', 'ヤッホー💕元気かな（￣ー￣?）🤔❗❓❗❓<br>今日は大雨だけどなにするのカナ❓✋❓<br>よく頑張ったね😍💗💕(^o^)えらいえらい😃✋', 'ｵｼﾞｻﾝ明日も仕事だけどなかなか寝れないよ〜(^▽^;)<br>早く会いたイヨ(￣Д￣；；ナンチャッテ😃😄(^з<)😚<br>風邪ひかないようにね😄', 'オハヨウ〜(^o^)😆<br>出張で岐阜に行ってきたよ😚(^_^)😃♥<br>観光でも、行きたいなぁ😚モチロン、一緒にネ😆💗', '突然だけど、イタリアン🍝好きカナ❓🤔❗❓日曜日ご飯行こうよ(^з<)😃✋💗😃', '今日はよく休んでね💤🤑(＃￣З￣)今日も大変だったんだね😱💦', 'オッハー(^_^)たまにはオレにも連絡ほしいナ💕(^_^)😚<br>ゆっくり、身体休めてね😍😘😃オヤスミナサイ(＃￣З￣)(^^;;', 'おはよー！チュッ😃♥ 😘今日はどんな一日だった🤔<br>天気悪いと気分もよくないよね(・_・;^^;(￣Д￣；；😱<br>じゃあ今日は会社休んでおじさんとカラオケ🎤しよウ(^_^)'];
@@ -8031,6 +8033,7 @@ var submitMessage = function submitMessage() {
 							readMessage();
 							setTimeout(function () {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $randTxt + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
 							}, 2000 + $count);
 						}
 					}
