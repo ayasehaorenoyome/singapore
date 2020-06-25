@@ -31470,6 +31470,11 @@ button.swiper-pagination-bullet {
   background-size: cover;
   overflow: hidden;
 }
+@media screen and (max-width: 400px) {
+  .c-lineBlock .area.body {
+    height: calc(100% - (45px + 50px));
+  }
+}
 .c-lineBlock .area.body .inner {
   display: flex;
   flex-direction: column;
