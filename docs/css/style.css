@@ -254,6 +254,9 @@ body {
   height: 100%;
   background-color: #fff;
   color: #333;
+  background-image: url("../images/bg.jpeg");
+  background-size: cover;
+  background-position: center;
   font-family: "ヒラギノ角ゴ ProN W3", 'Hiragino Kaku Gothic ProN', "游ゴシック", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
@@ -31244,6 +31247,7 @@ button.swiper-pagination-bullet {
   height: 100vh;
   position: relative;
   margin: 0 auto;
+  filter: drop-shadow(20px 10px 15px rgba(0,0,0,0.7));
 }
 @media screen and (max-width: 400px) {
   .c-lineBlock {
