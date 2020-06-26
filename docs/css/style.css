@@ -31294,6 +31294,25 @@ button.swiper-pagination-bullet {
   max-width: 350px;
   height: 75%;
   max-height: 580px;
+  overflow: hidden;
+}
+.c-lineBlock .block.contents:after {
+  content: '';
+  display: inline-block;
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  top: -31%;
+  left: -70%;
+  background-color: rgba(255,255,255,0.07);
+  transform-origin: center;
+  transform: rotate(38deg);
+  pointer-events: none;
+}
+@media screen and (max-width: 400px) {
+  .c-lineBlock .block.contents:after {
+    display: none;
+  }
 }
 @media screen and (max-width: 400px) {
   .c-lineBlock .block.contents {
