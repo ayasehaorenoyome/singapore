@@ -63,7 +63,9 @@ const submitMessage = () => {
 						},2000);
 					}
 					function scrollBottm() {
-						$(".scrollBox01").mCustomScrollbar("scrollTo","bottom");
+						setTimeout(function(){
+							$(".scrollBox01").mCustomScrollbar("scrollTo","bottom");
+						},500);
 					}
 					
 					if ($submit !== '') {
@@ -91,7 +93,6 @@ const submitMessage = () => {
 							readMessage();
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
-								scrollBottm();
 							},2000 + $count01);
 							setTimeout(function(){
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $img01 +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
@@ -123,8 +124,198 @@ const submitMessage = () => {
 								scrollBottm();
 							},2000 + $count);
 
-						}
-
+						} else if ($submit.match('蜜です|コロナ|小池|ソーシャルディスタンス|Social Distance|social distance') ) {
+							var $text01 = 'Social Distance'
+							var $count01 = $text01.length * 300;
+							var $img01 = 'social_distance.jpg'
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $img01 +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+							},2000 + $count01 - 500);
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01);
+						} else if ($submit.match('インド|アラジン|ジーニー|ホール・ニュー・ワールド|A Whole New World') ) {
+							var $link01 = 'https://www.youtube.com/watch?v=xPF9XvNYhNw'
+							var $text01 = 'インドがわからない'
+							var $count01 = $text01.length * 300;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'<br><a href="'+ $link01 +'" target="_blank">'+ $link01 +'</a></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01);
+						} else if ($submit.match('ドミニカ|国旗|キャッサバ|あっというまに|あっという間に|トップ・オブ・ザ・ワールド|Top of the World') ) {
+							var $link01 = 'https://www.youtube.com/watch?v=Ki8is7nGFS4'
+							var $text01 = '国旗の描き方'
+							var $count01 = $text01.length * 300;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'<br><a href="'+ $link01 +'" target="_blank">'+ $link01 +'</a></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01);
+						} else if ($submit.match('おはよ|おきた|起きた|朝') ) {
+							var $morning = [
+								'おはよう！',
+								'おはよー！！！！！起きて！！！！！！！！朝だよ！！！！！！すごい朝！！！！外が明るい！！！！！カンカンカンカンカンカンカンカンカンカンカンカン！！！！！おはよ！！！！！！！！！見て見て！！！！外明るいの！！！外！！！！見て！！！！カンカンカン！！！',
+								'おはよ！',
+								'おはよ〜〜！',
+								'おはようございます',
+							]
+							var $randTxt = $morning[Math.floor(Math.random() * $morning.length)];
+							var $count = $randTxt.length * 200;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $randTxt +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count);
+						} else if ($submit.match('こんにちは|こんにちわ|昼') ) {
+							var $noon = [
+								'こんにちは！',
+								'お昼ご飯たべた？',
+								'こんにちは〜'
+							]
+							var $randTxt = $noon[Math.floor(Math.random() * $noon.length)];
+							var $count = $randTxt.length * 200;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $randTxt +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count);
+						} else if ($submit.match('こんばんわ|こんばんは|夜') ) {
+							var $night = [
+								'こんばんは！',
+								'こんばんわ〜',
+								'今日の晩ご飯なにかな〜',
+							]
+							var $randTxt = $night[Math.floor(Math.random() * $night.length)];
+							var $count = $randTxt.length * 200;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $randTxt +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count);
+						} else if ($submit.match('シンガポール|マーライオン|時差') ) {
+							var $text01 = '日本との時差は約１時間です'
+							var $count01 = $text01.length * 300;
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01);
+						} else if ($submit.match('クララ') ) {
+							var $text01 = 'エメット〜〜〜！'
+							var $count01 = $text01.length * 300;
+							var $img01 = 'Clara.jpg'
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+							},2000 + $count01);
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $img01 +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01 + 1000);
+						} else if ($submit.match('エメット') ) {
+							var $text01 = 'クララ〜〜〜！'
+							var $count01 = $text01.length * 300;
+							var $img01 = 'Emmett.jpg'
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">'+ $text01 +'</span><span class="time">'+ $h + ':' + $m + '</span></p>');
+							},2000 + $count01);
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $img01 +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + $count01 + 1000);
+						} else if ($submit.match('トニー|アイアンマン|3000回愛してる|I love you 3000|I LOVE YOU 3000|スターク') ) {
+							var $ironman = [
+								'ironman01.jpg',
+								'ironman02.jpg',
+								'ironman03.jpg',
+								'ironman04.jpg',
+								'ironman05.jpg',
+								'ironman06.jpg',
+								'ironman07.jpg',
+								'ironman08.jpg',
+							]
+							var $randImg = $ironman[Math.floor(Math.random() * $ironman.length)];
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $randImg +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + 1000);
+						} else if ($submit.match('キャップ|スティーブ|ロジャース|キャプテン|キャプテンアメリカ|キャプテン・アメリカ|キャプテン アメリカ') ) {
+							var $captain = [
+								'captain01.jpg',
+								'captain02.jpg',
+								'captain03.jpg',
+								'captain04.jpg',
+								'captain05.jpg',
+								'captain06.jpg',
+								'captain07.jpg',
+								'captain08.jpg',
+								'captain09.jpg',
+							]
+							var $randImg = $captain[Math.floor(Math.random() * $captain.length)];
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $randImg +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + 1000);
+						} else if ($submit.match('ソー|ムジョルニア|アスガルド') ) {
+							var $thor = [
+								'thor01.jpg',
+								'thor02.jpg',
+								'thor03.jpg',
+								'thor04.jpg',
+								'thor05.jpg',
+								'thor06.jpg',
+								'thor07.jpg',
+								'thor08.jpg',
+								'thor09.jpg',
+							]
+							var $randImg = $thor[Math.floor(Math.random() * $thor.length)];
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $randImg +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + 1000);
+						} else if ($submit.match('MARVEL|マーベル|MCU') ) {
+							var $thor = [
+								'ironman01.jpg',
+								'ironman02.jpg',
+								'ironman03.jpg',
+								'ironman04.jpg',
+								'ironman05.jpg',
+								'ironman06.jpg',
+								'ironman07.jpg',
+								'ironman08.jpg',
+								'captain01.jpg',
+								'captain02.jpg',
+								'captain03.jpg',
+								'captain04.jpg',
+								'captain05.jpg',
+								'captain06.jpg',
+								'captain07.jpg',
+								'captain08.jpg',
+								'captain09.jpg',
+								'thor01.jpg',
+								'thor02.jpg',
+								'thor03.jpg',
+								'thor04.jpg',
+								'thor05.jpg',
+								'thor06.jpg',
+								'thor07.jpg',
+								'thor08.jpg',
+								'thor09.jpg',
+							]
+							var $randImg = $thor[Math.floor(Math.random() * $thor.length)];
+							readMessage();
+							setTimeout(function(){
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/'+ $randImg +'"></span><span class="time">'+ $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							},2000 + 1000);
+						} 
 					}
 					$('.col.mike').show();
 					$('.col.submit').remove(); 
