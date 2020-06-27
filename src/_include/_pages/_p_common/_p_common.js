@@ -19,13 +19,6 @@ let $submitTaeget;
 const scrollBar = () => {
 	$(window).load(function(){
 		$(".scrollBox01").mCustomScrollbar();
-		if ($(ele).data('method') == 'panel_workroom') {
-			//上のsettopで底までいかなかった場合一瞬settopの位置を表示した後、底まで行く
-			$('.mCustomScrollbar').mCustomScrollbar('scrollTo', 'bottom',{
-				scrollInertia:0
-			}
-		);
-        }
 	});
 }
 
@@ -41,18 +34,30 @@ const headerClock = () => {
 
 const submitMessage = () => {
 	$('#text').on('keydown',function (e) {
-		var $submit = $('#text').val();
-		if ( e.which === 13 || e.which === 8) {
-			if ($submit !== '' && !$('#submit').length) {
-				$('.col.mike').hide();
-				$('.col.input').after('<div class="col submit" id="submit"></div>');
-				$submitTaeget = $('#submit');
+		var $input = $('#text').val();
+		var $submit = $input.replace(/(\n|\r)/g, "<br />");
+		if ($submit !== '' && !$('#submit').length) {
+			$('.col.mike').hide();
+			$('.col.input').after('<div class="col submit" id="submit"></div>');
+		} else {
+
+		}
+		if(event.shiftKey){
+			if(e.keyCode !== 13 || ( e.keyCode === 13 && (e.shiftKey === true || e.ctrlKey === true || e.altKey === true) )){
+				
+			}
+		} else {
+			$submitTaeget = $('#submit');
+			if ($submit !== '') {
 				$submitTaeget.on('click',function () {
 					var $time = new Date();
 					var $h = $time.getHours();
 					var $m = ('0'+$time.getMinutes()).slice(-2);
-					var $submit = $('#text').val();
-					
+					var $input = $('#text').val();
+					var $submit = $input.replace(/(\n|\r)/g, "<br />");
+
+
+					// 既読つける
 					function readMessage(){
 						setTimeout(function(){
 							$('.is-submit .read').each(function() {
@@ -62,6 +67,7 @@ const submitMessage = () => {
 							});
 						},2000);
 					}
+					// コメント追加されたら最下部までスクロール
 					function scrollBottm() {
 						setTimeout(function(){
 							$(".scrollBox01").mCustomScrollbar("scrollTo","bottom");
@@ -319,7 +325,7 @@ const submitMessage = () => {
 					}
 					$('.col.mike').show();
 					$('.col.submit').remove(); 
-				});
+				});	
 			} else if( $submit !== '' && $('#submit').length === 1) {
 
 			} else {
