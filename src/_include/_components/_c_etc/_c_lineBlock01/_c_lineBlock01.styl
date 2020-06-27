@@ -1,7 +1,21 @@
-
+body
+	height 100vh
 .l-contentsBody
 	height 100vh
 	position relative
+	&:before
+		content ''
+		display inline-block
+		width 100%
+		height 100%
+		position absolute
+		top 0
+		left 0
+		background-image url('../images/bg01.jpeg')
+		background-size cover
+		background-position center
+		filter blur(6px)
+
 
 .c-lineBlock
 	max-width 370px

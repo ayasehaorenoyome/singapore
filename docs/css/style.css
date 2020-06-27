@@ -244,19 +244,15 @@ textarea {
   content: "\EA09";
 }
 html {
-  height: 100vw;
+  height: 100%;
   font-size: 62.5%;
 }
 body {
   overflow: hidden;
   -webkit-text-size-adjust: 100%;
-  min-height: 100vh;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   color: #333;
-  background-image: url("../images/bg.jpeg");
-  background-size: cover;
-  background-position: center;
   font-family: "ヒラギノ角ゴ ProN W3", 'Hiragino Kaku Gothic ProN', "游ゴシック", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
@@ -31242,9 +31238,25 @@ button.swiper-pagination-bullet {
 .c-liquidHalfSet01>.group .area.is-text ol li {
   list-style: decimal;
 }
+body {
+  height: 100vh;
+}
 .l-contentsBody {
   height: 100vh;
   position: relative;
+}
+.l-contentsBody:before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/bg01.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
 }
 .c-lineBlock {
   max-width: 370px;
