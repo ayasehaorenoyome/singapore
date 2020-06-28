@@ -31269,7 +31269,6 @@ body {
   left: 0;
   margin: 0 auto;
   transform: translate3d(0, -50%, 0);
-  filter: drop-shadow(20px 10px 15px rgba(0,0,0,0.7));
 }
 @media screen and (max-width: 450px) {
   .c-lineBlock {
@@ -31357,6 +31356,7 @@ body {
   height: 75%;
   max-height: 580px;
   overflow: hidden;
+  background-color: #fff;
 }
 .c-lineBlock .block.contents:after {
   content: '';
@@ -31554,6 +31554,10 @@ body {
   background-image: url("../images/line_bg.jpg");
   background-size: cover;
   overflow: hidden;
+  transition: all 0.3s;
+}
+.c-lineBlock .area.body.is-active {
+  height: calc(100% - (64px + 140px));
 }
 @media screen and (max-width: 450px) {
   .c-lineBlock .area.body {
@@ -31665,6 +31669,15 @@ body {
   height: 10px;
   background-image: url("../images/message_before02.png");
 }
+.c-lineBlock .area.body .inner .message.is-submit .img {
+  max-width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.c-lineBlock .area.body .inner .message.is-submit .img img {
+  width: 100%;
+  height: auto;
+}
 .c-lineBlock .area.body .mCSB_inside > .mCSB_container {
   padding: 5px 8px 5px 5px;
   margin-right: 0;
@@ -31757,7 +31770,22 @@ body {
   border: 1px solid #dedede;
   border-radius: 50px;
 }
-.c-lineBlock .area.input .col.input:after {
+.c-lineBlock .area.input .col.input .stampBtn {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translate3d(0, -50%, 0);
+}
+.c-lineBlock .area.input .col.input .stampBtn:hover {
+  cursor: pointer;
+}
+.c-lineBlock .area.input .col.input .stampBtn:after {
+  position: absolute;
+  top: 0;
+  left: 0;
   content: "\EA13";
   font-family: "myfont";
   font-style: normal;
@@ -31765,11 +31793,6 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: 6px;
-  transform: translate3d(0, -50%, 0);
   color: #222a41;
   font-size: 24px;
   font-size: 2.4rem;
@@ -31836,6 +31859,29 @@ body {
   color: #178aff;
   font-size: 26px;
   font-size: 2.6rem;
+}
+.c-lineBlock .area.stampArea {
+  display: none;
+  height: 90px;
+  background-color: #fff;
+}
+.c-lineBlock .area.stampArea .inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.c-lineBlock .area.stampArea .inner .stamp {
+  width: calc(25% - 10px);
+}
+.c-lineBlock .area.stampArea .inner .stamp:nth-child(n+5) {
+  margin-top: 10px;
+}
+.c-lineBlock .area.stampArea .inner .stamp img {
+  width: 100%;
+  height: auto;
 }
 .c-memoSet01 {
   opacity: 0.2;

@@ -7963,6 +7963,113 @@ var headerClock = function headerClock() {
 };
 
 var submitMessage = function submitMessage() {
+	// 既読つける
+	function readMessage() {
+		setTimeout(function () {
+			$('.is-submit .read').each(function () {
+				if ($(this).text() == '') {
+					$(this).text('既読');
+				}
+			});
+		}, 2000);
+	}
+	// コメント追加されたら最下部までスクロール
+	function scrollBottm() {
+		setTimeout(function () {
+			$(".scrollBox01").mCustomScrollbar("scrollTo", "bottom");
+		}, 500);
+	}
+
+	$('.stampBtn').on('click', function () {
+		$('.stampArea').slideToggle(200);
+		$('.area.body').toggleClass('is-active');
+	});
+
+	$('.stampArea .stamp img').on('click', function () {
+		var $time = new Date();
+		var $h = $time.getHours();
+		var $m = ('0' + $time.getMinutes()).slice(-2);
+		var $stamp = $(this).attr('alt');
+		if ($stamp == 'グー') {
+			var $text01 = 'ほな、注ぎます';
+			var $count01 = $text01.length * 300;
+			var $img01 = 'stamp06.png';
+			var $img02 = 'stamp07.png';
+			$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="img"><img src="images/stamp04.png"></span></p>');
+			scrollBottm();
+			readMessage();
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+			}, 2000 + 1000);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200 + $count01);
+		} else if ($stamp == 'チョキ') {
+			var $text01 = 'ほな、注ぎます';
+			var $count01 = $text01.length * 300;
+			var $img01 = 'stamp04.png';
+			var $img02 = 'stamp07.png';
+			$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="img"><img src="images/stamp05.png"></span></p>');
+			scrollBottm();
+			readMessage();
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+			}, 2000 + 1000);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200 + $count01);
+		} else if ($stamp == 'パー') {
+			var $text01 = 'ほな、注ぎます';
+			var $count01 = $text01.length * 300;
+			var $img01 = 'stamp04.png';
+			var $img02 = 'stamp07.png';
+			$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="img"><img src="images/stamp06.png"></span></p>');
+			scrollBottm();
+			readMessage();
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+			}, 2000 + 1000);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + 1200 + $count01);
+		} else if ($stamp == 'どこ') {
+			var $text01 = 'いま、シンガポールにいます。';
+			var $count01 = $text01.length * 300;
+			var $text02 = 'この国を南北に縦断する地下鉄を、私は作っています。';
+			var $count02 = $text02.length * 300;
+			$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="img"><img src="images/stamp02.png"></span></p>');
+			scrollBottm();
+			readMessage();
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + $count01);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text02 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + $count01 + $count02);
+			setTimeout(function () {
+				$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/stamp01.png"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+				scrollBottm();
+			}, 2000 + $count01 + $count02 + 1000);
+		}
+	});
+
 	$('#text').on('keydown', function (e) {
 		var $input = $('#text').val();
 		var $submit = $input.replace(/(\n|\r)/g, "<br />");
@@ -7982,23 +8089,6 @@ var submitMessage = function submitMessage() {
 					var $input = $('#text').val();
 					var $submit = $input.replace(/(\n|\r)/g, "<br />");
 
-					// 既読つける
-					function readMessage() {
-						setTimeout(function () {
-							$('.is-submit .read').each(function () {
-								if ($(this).text() == '') {
-									$(this).text('既読');
-								}
-							});
-						}, 2000);
-					}
-					// コメント追加されたら最下部までスクロール
-					function scrollBottm() {
-						setTimeout(function () {
-							$(".scrollBox01").mCustomScrollbar("scrollTo", "bottom");
-						}, 500);
-					}
-
 					if ($submit !== '') {
 						$('.scrollBox01 .inner').append('<p class="message is-submit"><span class="timeBlock"><span class="read"></span><span class="time">' + $h + ':' + $m + '</span></span><span class="text">' + $submit + '</span></p>');
 						$('#text').val('');
@@ -8017,6 +8107,10 @@ var submitMessage = function submitMessage() {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text02 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
 								scrollBottm();
 							}, 2000 + $count01 + $count02);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/stamp01.png"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + $count01 + $count02 + 1000);
 						} else if ($submit.match('正解は')) {
 							var $text01 = '越後製菓';
 							var $count01 = $text01.length * 300;
@@ -8159,6 +8253,57 @@ var submitMessage = function submitMessage() {
 								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $randImg + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
 								scrollBottm();
 							}, 2000 + 1000);
+						} else if ($submit.match('グー|ぐー')) {
+							var $text01 = 'ほな、注ぎます';
+							var $count01 = $text01.length * 300;
+							var $img01 = 'stamp06.png';
+							var $img02 = 'stamp07.png';
+							readMessage();
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+							}, 2000 + 1000);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200 + $count01);
+						} else if ($submit.match('チョキ|ちょき')) {
+							var $text01 = 'ほな、注ぎます';
+							var $count01 = $text01.length * 300;
+							var $img01 = 'stamp04.png';
+							var $img02 = 'stamp07.png';
+							readMessage();
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+							}, 2000 + 1000);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200 + $count01);
+						} else if ($submit.match('パー|ぱー')) {
+							var $text01 = 'ほな、注ぎます';
+							var $count01 = $text01.length * 300;
+							var $img01 = 'stamp05.png';
+							var $img02 = 'stamp07.png';
+							readMessage();
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img01 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+							}, 2000 + 1000);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="img"><img src="images/' + $img02 + '"></span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200);
+							setTimeout(function () {
+								$('.scrollBox01 .inner').append('<p class="message is-bot"><span class="icon"></span><span class="text">' + $text01 + '</span><span class="time">' + $h + ':' + $m + '</span></p>');
+								scrollBottm();
+							}, 2000 + 1200 + $count01);
 						}
 					}
 					$('.col.mike').show();
