@@ -31620,6 +31620,10 @@ body {
   margin-right: 5px;
   max-width: 200px;
 }
+.c-lineBlock .area.body .inner .message.is-bot .text.stamp,
+.c-lineBlock .area.body .inner .message.is-bot .img.stamp {
+  max-width: 150px !important;
+}
 .c-lineBlock .area.body .inner .message.is-bot .img {
   border-radius: 10px;
   overflow: hidden;
@@ -31673,6 +31677,9 @@ body {
   max-width: 200px;
   border-radius: 10px;
   overflow: hidden;
+}
+.c-lineBlock .area.body .inner .message.is-submit .img.stamp {
+  max-width: 150px !important;
 }
 .c-lineBlock .area.body .inner .message.is-submit .img img {
   width: 100%;
