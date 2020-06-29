@@ -31393,7 +31393,7 @@ body {
   width: 100%;
   height: 64px;
   color: #fff;
-  background-color: #222a41;
+  background-color: #000;
 }
 @media screen and (max-width: 450px) {
   .c-lineBlock .area.header {
@@ -31551,8 +31551,7 @@ body {
 .c-lineBlock .area.body {
   width: 100%;
   height: calc(100% - (64px + 50px));
-  background-image: url("../images/line_bg.jpg");
-  background-size: cover;
+  background-color: #333;
   overflow: hidden;
   transition: all 0.3s;
 }
@@ -31637,9 +31636,11 @@ body {
 }
 .c-lineBlock .area.body .inner .message.is-bot .text:before {
   left: -6px;
-  width: 12px;
-  height: 10px;
-  background-image: url("../images/message_before01.png");
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 15px 0;
+  border-color: transparent #fff transparent transparent;
 }
 .c-lineBlock .area.body .inner .message.is-submit {
   display: flex;
@@ -31665,13 +31666,16 @@ body {
 }
 .c-lineBlock .area.body .inner .message.is-submit .text {
   max-width: 220px;
-  background-color: #8ddb67;
+  color: #fff;
+  background-color: #000;
 }
 .c-lineBlock .area.body .inner .message.is-submit .text:before {
   right: -6px;
-  width: 12px;
-  height: 10px;
-  background-image: url("../images/message_before02.png");
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 20px 0 0;
+  border-color: #000 transparent transparent transparent;
 }
 .c-lineBlock .area.body .inner .message.is-submit .img {
   max-width: 200px;

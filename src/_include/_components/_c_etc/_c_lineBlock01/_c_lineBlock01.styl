@@ -131,7 +131,7 @@ body
 			width 100%
 			height 64px
 			color #fff
-			background-color #222a41
+			background-color #000
 			+MQ_SP(450px)
 				height 45px
 			.upper
@@ -250,8 +250,9 @@ body
 		&.body
 			width 100%
 			height calc(100% - (64px + 50px))
-			background-image url('../images/line_bg.jpg')
-			background-size cover
+			// background-image url('../images/line_bg.jpg')
+			// background-size cover
+			background-color #333
 			overflow hidden
 			transition all 0.3s
 			&.is-active
@@ -315,9 +316,14 @@ body
 							background-color #fff
 							&:before
 								left -6px
-								width 12px
-								height 10px
-								background-image url('../images/message_before01.png')
+								width 0
+								height 0
+								border-style solid
+								border-width 0 20px 15px 0
+								border-color transparent #fff transparent transparent
+								// width 12px
+								// height 10px
+								// background-image url('../images/message_before01.png')
 						
 							
 					&.is-submit
@@ -339,12 +345,18 @@ body
 							margin-right 5px
 						.text
 							max-width 220px
-							background-color #8ddb67
+							color #fff
+							background-color #000
 							&:before
 								right -6px
-								width 12px
-								height 10px
-								background-image url('../images/message_before02.png')
+								width 0
+								height 0
+								border-style solid
+								border-width 15px 20px 0 0
+								border-color #000 transparent transparent transparent
+								// width 12px
+								// height 10px
+								// background-image url('../images/message_before02.png')
 						.img
 							max-width 200px
 							border-radius 10px
