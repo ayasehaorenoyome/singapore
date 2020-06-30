@@ -31256,7 +31256,7 @@ body {
   background-image: url("../images/bg01.jpeg");
   background-size: cover;
   background-position: center;
-  filter: blur(6px);
+  filter: blur(4px);
 }
 .c-lineBlock {
   max-width: 370px;
